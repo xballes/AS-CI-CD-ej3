@@ -1,21 +1,15 @@
-from wallet import Wallet
+class Wallet:
+    def __init__(self, balance):
+        self.balance = balance
 
-def test_getbalance():
-    obj = Wallet(0)
-    obj.set_balance(20)
-    assert obj.get_balance() == 20
+    def set_balance(self, val):
+        self.balance = self.balance + val
 
-def test_removebalance():
-    obj = Wallet(50)
-    obj.remove_balance(20)
-    assert obj.get_balance() == 30
+    def get_balance(self):
+        return self.balance
 
-def test_setbalance():
-    obj = Wallet(0)
-    obj.set_balance(40)
-    assert obj.get_balance() == 40
+    def remove_balance(self, val):
+        self.balance = self.balance - val
 
-def test_setbalance1000():
-    obj = Wallet(0)
-    obj.set_balance1000()
-    assert obj.get_balance() == 1000
+    def set_balance1000(self):
+        self.balance = 1000
